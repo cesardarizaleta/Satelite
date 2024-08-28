@@ -15,6 +15,7 @@ export default function Main() {
             return
         }
         document.querySelector('main').style.transform = 'translateY(-100%)'
+        
     }
 
 
