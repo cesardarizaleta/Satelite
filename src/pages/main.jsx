@@ -10,8 +10,7 @@ export default function Main() {
                 <p>Bienvenidos</p>
             </Fade>
 
-            <article className="w-80 my-5 rounded-lg flex flex-col justify-between items-center p-10">
-                <h3 className="text-xl">Listado de Precios</h3>
+            <article className="w-80 relative h-fit my-5 rounded-xl flex flex-col gap-4 justify-between items-center p-7">
                 <section className="flex flex-col w-full">
                     <label>Usuario</label>
                     <input className="p-2 transition-all text-black rounded-md outline-none" placeholder="Jose"></input>
@@ -20,7 +19,7 @@ export default function Main() {
                     <label>Contraseña</label>
                     <input className="p-2 transition-all text-black rounded-md outline-none" type="password" placeholder="1..."></input>
                 </section>
-                <button className="w-full bg-white text-black p-2 rounded-md">Acceder</button>
+                <button className="w-full my-2 bg-white text-black p-2 rounded-md">Acceder</button>
             </article>
         </main>
     )
