@@ -12,7 +12,9 @@ export default function Main() {
             setTimeout(() => {
                 error.style.top = '-50%'
             },1500)
+            return
         }
+        document.querySelector('main').style.transform = 'translateY(-100%)'
     }
 
 
