@@ -12,3 +12,10 @@
 ```html
 git clone https://github.com/cesardarizaleta/Satelite.git && cd Satelite && npm i react react-dom && npm i react-icons && npm start
 ```
+
+## Technologies
+<div align="center" width='100%'>
+  <img width=10% src="https://i.ibb.co/p16RYYT/devicon-react.png">
+  <img width=10% src="https://i.ibb.co/wdsDvkH/devicon-tailwindcss.png">
+  <img width='10%' src="https://i.ibb.co/QmFb9tx/channels4-profile-removebg-preview.png">
+</div> 
