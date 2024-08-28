@@ -2,6 +2,10 @@
     animation: enter 2s ease;
 }
 
+.border {
+    border: 2px solid black;
+}
+
 @keyframes enter {
 
     from {
