@@ -1,17 +1,27 @@
 import React from "react";
 import "./style/main.css";
 import { Slide, Fade} from "react-awesome-reveal";
+import Error from "../components/error";
 
 export default function Main() {
 
+    const [error, setError] = React.useState(false);
+
     function upmain() {
+        if(document.getElementById("login-name").value === "" || document.getElementById("login-pass").value === "") {
+            alert("Datos Incorrectos");
+            return;
+        }
         const main = document.querySelector("main");
         
         main.style.transform = "translateY(-100vh)";
+        setError(true);
     }
 
     return (
         <main className="w-screen transition-all duration-1000 h-screen bg-center bg-cover text-white flex justify-center items-center flex-col">
+            {<Error message="Datos Incorrectos" /> && error}
+
             <Fade cascade duration={2000}>
                 <h1 className="text-4xl font-bold text-wrap">Satelite Express</h1>
                 <p>Bienvenidos</p>
