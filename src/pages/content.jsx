@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './style/content.css';
 import Product from "../components/product";
 
@@ -13,20 +13,26 @@ export default function Content() {
             e.target.classList.remove('bg-black', 'text-white');
             e.target.classList.add('bg-white', 'text-black','border');
         }
+        console.log(productos)
     }
 
-    const productos = [
-        {
-            name: 'Ron',
-            price: 100,
-            type: 'Ron'
-        },
-        {
-            name: 'Ron',
-            price: 100,
-            type: 'Ron'
-        }
-    ]
+    const [productos, setProductos] = useState([]
+    );
+
+    useEffect(() => {
+
+        const requestOptions = {
+            method: "GET",
+            redirect: "follow"
+          };
+          
+          fetch("https://api.escuelajs.co/api/v1/products?offset=0&limit=10", requestOptions)
+            .then((response) => response.json())
+            .then((result) => setProductos(result))
+            .catch((error) => console.error(error));
+
+    },[])
+
 
     return  (
         <div id="content" className="h-screen w-screen flex flex-col items-center justify-center gap-4">
@@ -42,9 +48,9 @@ export default function Content() {
                     <li onClick={type} className="bg-black transition-all cursor-pointer text-white p-2 px-8 rounded-full">Vino</li>
                 </ul>
             </nav>
-            <section className="w-4/5 flex">
+            <section className="w-4/5 gap-4 grid">
                 {productos.map((producto) => (
-                    <Product name={producto.name} price={producto.price} type={producto.type} />
+                    <Product name={producto.title} price={producto.price} type={producto.id} />
                 ))}
             </section>
         </div>

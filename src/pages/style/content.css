@@ -2,8 +2,13 @@
     animation: enter 2s ease;
 }
 
-.border {
+.active-border {
     border: 2px solid black;
+}
+
+#content section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
 @keyframes enter {
