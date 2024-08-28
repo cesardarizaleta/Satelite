@@ -26,7 +26,7 @@ export default function Content() {
             redirect: "follow"
           };
           
-          fetch("https://api.escuelajs.co/api/v1/products?offset=0&limit=10", requestOptions)
+          fetch("https://api.escuelajs.co/api/v1/products?offset=0&limit=30", requestOptions)
             .then((response) => response.json())
             .then((result) => setProductos(result))
             .catch((error) => console.error(error));
@@ -48,9 +48,9 @@ export default function Content() {
                     <li onClick={type} className="bg-black transition-all cursor-pointer text-white p-2 px-8 rounded-full">Vino</li>
                 </ul>
             </nav>
-            <section className="w-4/5 gap-4 grid">
+            <section className="w-4/5 gap-4 grid h-1/2 overflow-auto">
                 {productos.map((producto) => (
-                    <Product name={producto.title} price={producto.price} type={producto.id} />
+                    <Product image={producto.images[0]} name={producto.title} price={producto.price} type={producto.id} />
                 ))}
             </section>
         </div>
