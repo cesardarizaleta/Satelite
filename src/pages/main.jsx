@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./style/main.css";
-import { Slide, Fade} from "react-awesome-reveal";
+import {Fade} from "react-awesome-reveal";
 import Error from "../components/error";
 
 export default function Main() {
@@ -15,6 +15,9 @@ export default function Main() {
             return
         }
         document.querySelector('main').style.transform = 'translateY(-100%)'
+        setTimeout(() => {
+            document.querySelector('main').style.display = 'none'
+        },1000)
         
     }
 
