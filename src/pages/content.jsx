@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './style/content.css';
+import Product from "../components/product";
 
 export default function Content() {
 
@@ -13,6 +14,19 @@ export default function Content() {
             e.target.classList.add('bg-white', 'text-black','border');
         }
     }
+
+    const productos = [
+        {
+            name: 'Ron',
+            price: 100,
+            type: 'Ron'
+        },
+        {
+            name: 'Ron',
+            price: 100,
+            type: 'Ron'
+        }
+    ]
 
     return  (
         <div id="content" className="h-screen w-screen flex flex-col items-center justify-center gap-4">
@@ -28,8 +42,10 @@ export default function Content() {
                     <li onClick={type} className="bg-black transition-all cursor-pointer text-white p-2 px-8 rounded-full">Vino</li>
                 </ul>
             </nav>
-            <section>
-
+            <section className="w-4/5 flex">
+                {productos.map((producto) => (
+                    <Product name={producto.name} price={producto.price} type={producto.type} />
+                ))}
             </section>
         </div>
     )
