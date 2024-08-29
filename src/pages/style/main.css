@@ -4,6 +4,10 @@ main * {
     letter-spacing: 1.5px;
 }
 
+body {
+    overflow: hidden;
+}
+
 main {
     background: url('../../resources/main-back.png');
 }

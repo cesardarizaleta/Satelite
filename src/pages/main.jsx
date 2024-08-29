@@ -2,10 +2,13 @@ import React, { useEffect, useState } from "react";
 import "./style/main.css";
 import {Fade} from "react-awesome-reveal";
 import Error from "../components/error";
+import appFirebase from '../credenciales'
+import {getAuth, onAuthStateChanged, signInWithEmailAndPassword} from 'firebase/auth'
+const auth = getAuth(appFirebase)
 
 export default function Main() {
 
-    function action() {
+    const action = async () => {
         if(document.getElementById('login-name').value == '' || document.getElementById('login-pass').value == '') {
             const error = document.querySelector("#error-msg")
             error.style.top = '0'
@@ -14,10 +17,31 @@ export default function Main() {
             },1500)
             return
         }
+        
+        const email = document.getElementById('login-name').value
+        const pass = document.getElementById('login-pass').value
+
+        try {
+            await signInWithEmailAndPassword(auth, email, pass)
+        }
+        catch(error) {
+            const autherror = document.querySelector("#error-msg")
+            autherror.style.top = '0'
+            setTimeout(() => {
+                autherror.style.top = '-50%'
+            },1500)
+            return
+        }
+        
         document.querySelector('main').style.transform = 'translateY(-100%)'
+        document.getElementById('content').classList.add('enter')
         setTimeout(() => {
             document.querySelector('main').style.display = 'none'
         },1000)
+
+
+
+
         
     }
 
