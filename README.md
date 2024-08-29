@@ -21,5 +21,5 @@ git clone https://github.com/cesardarizaleta/Satelite.git && cd Satelite && npm 
   <img width=10% src="https://i.ibb.co/p16RYYT/devicon-react.png">
   <img width=10% src="https://i.ibb.co/wdsDvkH/devicon-tailwindcss.png">
   <img width='10%' src="https://i.ibb.co/QmFb9tx/channels4-profile-removebg-preview.png">
-  <img width='10% src="https://www.gstatic.com/devrel-devsite/prod/v4513918f2560a1fecca3cf64c2df2e8b263c90b977664567b98ccb062542a623/firebase/images/touchicon-180.png">
+  <img width='10%' src="https://www.gstatic.com/devrel-devsite/prod/v4513918f2560a1fecca3cf64c2df2e8b263c90b977664567b98ccb062542a623/firebase/images/touchicon-180.png">
 </div> 
