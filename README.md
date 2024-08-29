@@ -7,7 +7,6 @@
   
   Discover a world of flavors with our dedicated spirits platform. Access an extensive collection of distilled beverages, from the oldest whiskies to the most exotic rums. Each spirit features a detailed technical sheet, expert tasting notes, and pairing suggestions to help you enjoy every sip to the fullest.  
 
-
 ## Get Started  
 ### Webview: Click here: https://sateliteca.vercel.app  
 
@@ -15,6 +14,9 @@
 ```html
 git clone https://github.com/cesardarizaleta/Satelite.git && cd Satelite && npm i react react-dom && npm i react-icons && npm start
 ```
+
+## Access  
+If you would like to get in touch, please feel free to email me directly at **cesardarizaleta@gmail.com**, or you can fill out the contact form on my portfolio
 
 ## Technologies
 <div align="center" width='100%'>
