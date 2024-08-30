@@ -5,6 +5,7 @@ import Error from "../components/error";
 import appFirebase from '../credenciales'
 import {getAuth, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword} from 'firebase/auth'
 const auth = getAuth(appFirebase)
+//
 
 export default function Main() {
 
