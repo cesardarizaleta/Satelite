@@ -16,7 +16,10 @@ git clone https://github.com/cesardarizaleta/Satelite.git && cd Satelite && npm 
 ```
 
 ## Access  
-If you would like to get in touch, please feel free to email me directly at **cesardarizaleta@gmail.com**, or you can fill out the contact form on my portfolio
+
+You can register with your email and your password as usually you do
+
+Or If you would like to get in touch, please feel free to email me directly at **cesardarizaleta@gmail.com**, or you can fill out the contact form on my portfolio
 
 ## Technologies
 <div align="center" width='100%'>
