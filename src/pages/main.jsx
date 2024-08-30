@@ -84,7 +84,7 @@ export default function Main() {
                     <label for="login-pass">Contraseña</label>
                     <input id="login-pass" className="p-2 transition-all text-black rounded-md outline-none" type="password" placeholder="1..."></input>
                 </section>
-                <label onClick={registrarse} className="transition-all duration-500 hover:line-through cursor-pointer">{acceso}</label>
+                <label onClick={registrarse} className="transition-all duration-500 hover:underline cursor-pointer">{acceso}</label>
                 <button onClick={action} id="login-btn" className="w-full my-2 bg-white text-black p-2 rounded-md
                 transition-all active:scale-95 duration-500">{registrado}</button>
             </article>
