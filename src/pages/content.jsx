@@ -43,7 +43,7 @@ export default function Content() {
             </nav>
             <section className="w-4/5 gap-4 grid h-1/2 overflow-auto">
                 {productos.map((producto) => (
-                    <Product image={null} name={producto.nombre} price={producto.precio} type={producto.marca} />
+                    <Product image={producto.imagen} name={producto.nombre} price={producto.precio} type={producto.marca} />
                 ))}
             </section>
         </div>
