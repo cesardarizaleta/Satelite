@@ -6,15 +6,13 @@ import LicoresJSON from "../resources/data/licores.json"
 export default function Content() {
 
     function type(e) {
-        if(e.target.classList.contains('bg-white')) {
-            e.target.classList.add('bg-black', 'text-white');
-            e.target.classList.remove('bg-white', 'text-black','border');
+        let tipo = e.target.innerText;
+        if (tipo === "Todos") {
+            setProductos(LicoresJSON);
+        } else {
+            let newProductos = LicoresJSON.filter(producto => producto.nombre === tipo);
+            setProductos(newProductos);
         }
-        else {
-            e.target.classList.remove('bg-black', 'text-white');
-            e.target.classList.add('bg-white', 'text-black','border');
-        }
-        console.log(productos)
     }
 
     const [productos, setProductos] = useState(LicoresJSON);
@@ -28,10 +26,10 @@ export default function Content() {
                     <li onClick={type} className="bg-black transition-all cursor-pointer text-white p-2 px-8 rounded-full">Todos</li>
                     <li onClick={type} className="bg-black transition-all cursor-pointer text-white p-2 px-8 rounded-full">Ron</li>
                     <li onClick={type} className="bg-black transition-all cursor-pointer text-white p-2 px-8 rounded-full">Vodka</li>
-                    <li onClick={type} className="bg-black transition-all cursor-pointer text-white p-2 px-8 rounded-full">Whisky</li>
+                    <li onClick={type} className="bg-black transition-all cursor-pointer text-white p-2 px-8 rounded-full">Whiskey</li>
                     <li onClick={type} className="bg-black transition-all cursor-pointer text-white p-2 px-8 rounded-full">Tequila</li>
-                    <li onClick={type} className="bg-black transition-all cursor-pointer text-white p-2 px-8 rounded-full">Cerveza</li>
-                    <li onClick={type} className="bg-black transition-all cursor-pointer text-white p-2 px-8 rounded-full">Vino</li>
+                    <li onClick={type} className="bg-black transition-all cursor-pointer text-white p-2 px-8 rounded-full">Ginebra</li>
+                    <li onClick={type} className="bg-black transition-all cursor-pointer text-white p-2 px-8 rounded-full">Brandy</li>
                 </ul>
             </nav>
             <section className="w-4/5 gap-4 grid h-1/2 overflow-auto">
