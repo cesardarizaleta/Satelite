@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import './style/content.css';
 import Product from "../components/product";
+import LicoresJSON from "../resources/licores.json"
 
 export default function Content() {
 
@@ -21,15 +22,7 @@ export default function Content() {
 
     useEffect(() => {
 
-        const requestOptions = {
-            method: "GET",
-            redirect: "follow"
-          };
-          
-          fetch("https://api.escuelajs.co/api/v1/products?offset=0&limit=30", requestOptions)
-            .then((response) => response.json())
-            .then((result) => setProductos(result))
-            .catch((error) => console.error(error));
+        setProductos(LicoresJSON)
 
     },[])
 
@@ -50,7 +43,7 @@ export default function Content() {
             </nav>
             <section className="w-4/5 gap-4 grid h-1/2 overflow-auto">
                 {productos.map((producto) => (
-                    <Product image={producto.images[0]} name={producto.title} price={producto.price} type={producto.id} />
+                    <Product image={null} name={producto.nombre} price={producto.precio} type={producto.marca} />
                 ))}
             </section>
         </div>
