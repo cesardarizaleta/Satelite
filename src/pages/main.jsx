@@ -9,7 +9,8 @@ const auth = getAuth(appFirebase)
 
 export default function Main() {
 
-    const action = async () => {
+    const action = async (e) => {
+        e.preventDefault()
         if(document.getElementById('login-name').value == '' || document.getElementById('login-pass').value == '') {
             const error = document.querySelector("#error-msg")
             error.style.top = '0'
@@ -44,12 +45,11 @@ export default function Main() {
         }
 
         document.querySelector('main').style.transform = 'translateY(-100%)'
+        document.getElementById('content').style.display = 'flex'
         document.getElementById('content').classList.add('enter')
         setTimeout(() => {
             document.querySelector('main').style.display = 'none'
         },1000)
-
-        
         
     }
 
@@ -75,18 +75,20 @@ export default function Main() {
                 <p>Bienvenidos</p>
             </Fade>
 
-            <article className="w-80 relative h-fit my-5 rounded-xl flex flex-col gap-4 justify-between items-center p-7">
-                <section className="flex flex-col w-full">
-                    <label for="login-name">Usuario</label>
-                    <input id="login-name" className="p-2 transition-all text-black rounded-md outline-none" placeholder="Jose"></input>
-                </section>
-                <section className="flex flex-col w-full">
-                    <label for="login-pass">Contraseña</label>
-                    <input id="login-pass" className="p-2 transition-all text-black rounded-md outline-none" type="password" placeholder="1..."></input>
-                </section>
-                <label onClick={registrarse} className="transition-all duration-500 hover:underline cursor-pointer">{acceso}</label>
-                <button onClick={action} id="login-btn" className="w-full my-2 bg-white text-black p-2 rounded-md
-                transition-all active:scale-95 duration-500">{registrado}</button>
+            <article className="w-80 relative h-fit my-5 rounded-xl">
+                <form className="flex h-full w-full flex-col gap-3 justify-between items-center p-7" onSubmit={action}>
+                    <section className="flex flex-col w-full">
+                        <label for="login-name">Usuario</label>
+                        <input id="login-name" className="p-2 transition-all text-black rounded-md outline-none" placeholder="Jose"></input>
+                    </section>
+                    <section className="flex flex-col w-full">
+                        <label for="login-pass">Contraseña</label>
+                        <input id="login-pass" className="p-2 transition-all text-black rounded-md outline-none" type="password" placeholder="1..."></input>
+                    </section>
+                    <label onClick={registrarse} className="transition-all duration-500 hover:underline cursor-pointer">{acceso}</label>
+                    <button id="login-btn" className="w-full my-2 bg-white text-black p-2 rounded-md
+                    transition-all active:scale-95 duration-500">{registrado}</button>
+                </form>
             </article>
         </main>
     )

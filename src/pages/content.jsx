@@ -17,14 +17,7 @@ export default function Content() {
         console.log(productos)
     }
 
-    const [productos, setProductos] = useState([]
-    );
-
-    useEffect(() => {
-
-        setProductos(LicoresJSON)
-
-    },[])
+    const [productos, setProductos] = useState(LicoresJSON);
 
 
     return  (
