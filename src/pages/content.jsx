@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import './style/content.css';
 import Product from "../components/product";
-import LicoresJSON from "../resources/licores.json"
+import LicoresJSON from "../resources/data/licores.json"
 
 export default function Content() {
 
